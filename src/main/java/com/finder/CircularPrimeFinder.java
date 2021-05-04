@@ -24,7 +24,6 @@ public class CircularPrimeFinder {
         char[] chars = string.toCharArray();
         char first = chars[0];
         for (int i = 0; i < chars.length-1; i++) {
-            // hier
             chars[i] = chars[i+1];
         }
         chars[chars.length-1] = first;
@@ -38,6 +37,7 @@ public class CircularPrimeFinder {
             number = shiftRight(number);
             list.add(number);
         }
+        // Optionele sorteerstap
         Collections.sort(list);
         return list;
     }
