@@ -15,11 +15,11 @@ public class CircularPrimeFinder {
     }
 
     /**
-     * Shift dit getal eentje naar rechts
+     * Shift dit getal eentje naar links
      * @param number bv 317
-     * @return 731
+     * @return 173
      */
-    public static Integer shiftRight(Integer number) {
+    public static Integer shiftLeft(Integer number) {
         String string = number.toString();
         char[] chars = string.toCharArray();
         char first = chars[0];
@@ -30,11 +30,27 @@ public class CircularPrimeFinder {
         return Integer.parseInt(new String(chars));
     }
 
+    /**
+     * Shift dit getal eentje naar rechts
+     * @param number bv 317
+     * @return 731
+     */
+    public static Integer shiftRight(Integer number) {
+        String string = number.toString();
+        char[] chars = string.toCharArray();
+        char last = chars[chars.length-1];
+        for (int i = chars.length-1; i > 0; i--) {
+            chars[i] = chars[i-1];
+        }
+        chars[0] = last;
+        return Integer.parseInt(new String(chars));
+    }
+
     public static List<Integer> giveRotations(Integer number) {
         ArrayList<Integer> list = new ArrayList<>();
         list.add(number);
         for (int i = 0; i < number.toString().length()-1; i++) {
-            number = shiftRight(number);
+            number = shiftLeft(number);
             list.add(number);
         }
         // Optionele sorteerstap

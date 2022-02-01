@@ -17,13 +17,23 @@ public class CircularPrimeFinderTest {
     }
 
     @Test
+    void testShiftLeft() {
+        assert(CircularPrimeFinder.shiftLeft(123) == 231);
+        assert(CircularPrimeFinder.shiftLeft(231) == 312);
+        assert(CircularPrimeFinder.shiftLeft(312) == 123);
+        assert(CircularPrimeFinder.shiftLeft(12345) == 23451);
+        assert(CircularPrimeFinder.shiftLeft(2) == 2);
+        assert(CircularPrimeFinder.shiftLeft(56) == 65);
+    }
+
+    @Test
     void testShiftRight() {
-        assert(CircularPrimeFinder.shiftRight(123) == 231);
-        assert(CircularPrimeFinder.shiftRight(231) == 312);
-        assert(CircularPrimeFinder.shiftRight(312) == 123);
-        assert(CircularPrimeFinder.shiftRight(12345) == 23451);
-        assert(CircularPrimeFinder.shiftRight(2) == 2);
-        assert(CircularPrimeFinder.shiftRight(56) == 65);
+        assert(CircularPrimeFinder.shiftLeft(123) == 312);
+        assert(CircularPrimeFinder.shiftLeft(231) == 123);
+        assert(CircularPrimeFinder.shiftLeft(312) == 231);
+        assert(CircularPrimeFinder.shiftLeft(12345) == 51234);
+        assert(CircularPrimeFinder.shiftLeft(2) == 2);
+        assert(CircularPrimeFinder.shiftLeft(56) == 65);
     }
 
     @Test
