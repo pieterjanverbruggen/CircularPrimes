@@ -9,6 +9,7 @@ public class CircularPrimeFinderTest {
     @Test
     void testPrime() {
         assert(CircularPrimeFinder.isPrime(3));
+        assert(CircularPrimeFinder.isPrime(13));
         assert( ! CircularPrimeFinder.isPrime(4));
         assert(CircularPrimeFinder.isPrime(5));
         assert( ! CircularPrimeFinder.isPrime(6));
