@@ -41,7 +41,7 @@ public class CircularPrimeFinderTest {
     void testRotation() {
         assert(CircularPrimeFinder.giveRotations(123).equals(Arrays.asList(123, 231, 312)));
         assert(CircularPrimeFinder.giveRotations(2).equals(Arrays.asList(2)));
-        assert(CircularPrimeFinder.giveRotations(51).equals(Arrays.asList(16,51)));
+        assert(CircularPrimeFinder.giveRotations(51).equals(Arrays.asList(15,51)));
     }
 
 }
